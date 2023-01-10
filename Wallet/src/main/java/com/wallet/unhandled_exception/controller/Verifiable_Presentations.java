@@ -23,7 +23,6 @@ import foundation.identity.jsonld.JsonLDUtils;
 import info.weboftrust.ldsignatures.LdProof;
 import info.weboftrust.ldsignatures.jsonld.LDSecurityKeywords;
 import info.weboftrust.ldsignatures.signer.Ed25519Signature2018LdSigner;
-import jakarta.json.JsonObject;
 
 @RestController
 @RequestMapping("/wallet/presentations/")

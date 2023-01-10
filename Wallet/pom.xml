@@ -22,7 +22,7 @@
 				<id>danubetech-maven-public</id>
 				<url>https://repo.danubetech.com/repository/maven-public/</url>
 			</repository>
-		</repositories>
+	</repositories>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>

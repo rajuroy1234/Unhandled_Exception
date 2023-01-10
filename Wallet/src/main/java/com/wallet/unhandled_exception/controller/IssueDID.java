@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/generate")
 public class IssueDID {
 	
-	@PostMapping(value = "/did", consumes = {MediaType.APPLICATION_JSON_VALUE},
+	@PostMapping(value = "/dids", consumes = {MediaType.APPLICATION_JSON_VALUE},
 	        produces = {MediaType.APPLICATION_JSON_VALUE})
 	public static FinalResponse generateDID(@RequestBody @NonNull String request) throws DecoderException, NullExceptions, IOException, Inaccurate 
 	{

@@ -28,7 +28,6 @@ public class CreateDIDWeb {
 		url = url.replace("/.well-known", "");
 		url = url.replace(":", "%3A");
 		url = url.replaceAll("/", ":");	
-		//url = url.replaceAll("\\", ":");
 		did += url;
 		
 		return did;
@@ -57,7 +56,6 @@ public class CreateDIDWeb {
 	
 	public static String domainToUrl(String domain)
 	{
-		//return domain + "/did.json";
 		return domain +"/dids/" + randUser + "/did.json";
 	}
 	
@@ -65,6 +63,4 @@ public class CreateDIDWeb {
 	{
 	
 	}
-	
-
 }

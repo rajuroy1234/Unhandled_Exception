@@ -17,7 +17,6 @@ import com.wallet.unhandled_exception.service.Codec;
 import com.wallet.unhandled_exception.service.Conversion;
 import com.wallet.unhandled_exception.service.CreateDIDWeb;
 import com.wallet.unhandled_exception.service.FileEdit;
-import com.wallet.unhandled_exception.utility.FTPD;
 
 public class Response {	
 	static final String domain = "http://localhost:2121";
@@ -68,23 +67,34 @@ public class Response {
 	{		
 		String publicKey, method;		
 		JsonObject jsonObj = convertToJsonObject(request);
+		try {
+			publicKey = jsonObj.get("publicKey").toString();		
+			publicKey = Conversion.toString(publicKey);			
+			
+			method = jsonObj.get("method").toString();			
+			method =  Conversion.toString(method);			
 		
-		publicKey = jsonObj.get("publicKey").toString();		
-		publicKey = Conversion.toString(publicKey);			
-		
-		method = jsonObj.get("method").toString();			
-		method =  Conversion.toString(method);
-		
-		if(StringUtils.isEmpty(method) || StringUtils.isEmpty(publicKey)) 				
-			throw new NullExceptions();		
-		else if(!(method.equalsIgnoreCase("web") || method.equalsIgnoreCase("key")))
-			throw new Inaccurate();
-		
-		if(method.equalsIgnoreCase("key"))
-			return keyResponse(publicKey);
-		
-		else if(method.equalsIgnoreCase("web"))
-			return webResponse(publicKey);
+			if(StringUtils.isEmpty(method) || StringUtils.isEmpty(publicKey)) 				
+				throw new NullExceptions();		
+			else if(!(method.equalsIgnoreCase("web") || method.equalsIgnoreCase("key")))
+				throw new Inaccurate();
+			
+			if(method.equalsIgnoreCase("key"))
+				return keyResponse(publicKey);
+			
+			else if(method.equalsIgnoreCase("web"))
+				return webResponse(publicKey);
+		}
+		catch(NullPointerException e)
+		{
+			e.printStackTrace();
+		}
+		catch(IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 				
 		return null;
 	}
