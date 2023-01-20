@@ -1,6 +1,10 @@
 package com.wallet.unhandled_exception.service;
 
 import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.wallet.unhandled_exception.model.DID_Doc;
 import com.wallet.unhandled_exception.utility.FTPD;
@@ -8,32 +12,15 @@ import com.wallet.unhandled_exception.utility.FTPD;
 
 public class FileEdit {
 	
-//	public static void cleanUpExistingFiles(String path) {
-//	    File targetFile = new File(path);
-//	    targetFile.delete();
-//	}
-//	
-//	public static void create(String path, DID_Doc doc) throws IOException
-//	{
-//		cleanUpExistingFiles(path);
-//		FileUtils.touch(new File(path));
-//		addAndUploadPublicKey(path, doc);		
-//	}
-//	
-//	public static void upload(MultipartFile file, String path) throws IllegalStateException, IOException
-//	{
-//		file.transferTo(new File(path));
-//		System.out.println("Upload success");
-//	}
-//	
+	private static final Logger logger = LoggerFactory.getLogger(FileEdit.class);  
+	
 	public static void uploadFTPD(String path, DID_Doc doc) throws IOException
-	{
-		 
+	{		 
 		Gson gson = new Gson();
 		String json = gson.toJson(doc);
-        FTPD.UploadFile(json, path);
+        FTPD.uploadFile(json, path);
 		
-		System.out.println("Added public key to json file");
+		logger.info("Added public key to json file");
 	}
 //	
 //	public static void del(String path)

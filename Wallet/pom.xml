@@ -17,19 +17,61 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
 	<repositories>
 			<repository>
 				<id>danubetech-maven-public</id>
 				<url>https://repo.danubetech.com/repository/maven-public/</url>
 			</repository>
 	</repositories>
-	<dependencies>
+
+	<dependencies>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.danubetech</groupId>
+			<artifactId>verifiable-credentials-java</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.apicatalog</groupId>
+		    <artifactId>iron-verifiable-credentials</artifactId>
+		    <version>0.7.0</version>
+		</dependency>
+	
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
 		    <groupId>commons-net</groupId>
 		    <artifactId>commons-net</artifactId>
 		    <version>3.6</version>
-		</dependency>		
+		</dependency>	
+		
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		</dependency>
+			
+		<!-- https://mvnrepository.com/artifact/com.github.jsonld-java/jsonld-java -->
+		<dependency>
+		    <groupId>com.github.jsonld-java</groupId>
+		    <artifactId>jsonld-java</artifactId>
+		    <version>0.13.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>decentralized-identity</groupId>
+			<artifactId>jsonld-common-java</artifactId>
+			<version>1.0.0</version>
+		</dependency>	
 		
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -56,19 +98,12 @@
 			<artifactId>tink</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.danubetech</groupId>
-			<artifactId>verifiable-credentials-java</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 		
-		<dependency>
-		    <groupId>com.apicatalog</groupId>
-		    <artifactId>iron-verifiable-credentials</artifactId>
-		    <version>0.7.0</version>
-		</dependency>
-	
+		<dependency>  
+	        <groupId>com.fasterxml.jackson.core</groupId>  
+	        <artifactId>jackson-databind</artifactId>  
+	    </dependency>  
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

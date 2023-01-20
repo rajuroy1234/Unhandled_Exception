@@ -36,11 +36,11 @@ public class CreateDIDWeb {
 	public static String read(String did)
 	{
 		String url = "https://";
-		String def = "/.well-known";
+		//String def = "/.well-known";
 
-		did = did.replace("did:web:", "");
-		if(url.indexOf(":")!= -1)
-			did += def;
+		url = url.replace("did:web:", "");
+//		if(url.indexOf(":")!= -1)
+//			did += def;
 		did = did.replaceAll(":", "/");
 		did = did.replace("%3A", ":");
 		url+=(did+"/did.json");
